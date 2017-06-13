@@ -147,6 +147,17 @@ var notify = new AlertNotify({
     classPrefix: 'my-awesome-class'
 });
 ```
+
+**width**
+
+Width of notifications block
+```js
+var notify = new AlertNotify({
+    width: '50px'
+});
+```
+Possible values: **String with any CSS width**
+
 Notify Options:
 ---------------
 
@@ -188,6 +199,7 @@ notify.showNotification({
 Possible values: **any text**
 
 **html (required if 'text' option not set)**
+
 Html content of notification
 ```js
 notify.showNotification({

@@ -1,8 +1,9 @@
 /*
  Alert Notifications Library 1.0.0
 
- Copyright 2016, Pavel Filimonov
+ Copyright 2017, Pavel Filimonov
  filimonps@gmail.com
+ Licensed under GPL-3.0
 
  Dependencies:
  jQuery
@@ -67,8 +68,11 @@ AlertNotify.prototype = {
     },
     _initialize: function () {
         $('body').append(this._globalBlock);
+        if (this._settings.width) {
+            this._globalBlock.css({width: this._settings.width});
+        }
 
-        if (this._settings.horizontal_align == 'center') {
+        if (this._settings.horizontal_align === 'center') {
             this._globalBlock.css({
                 'margin-left': function () {
                     return '-' + $(this).width() / 2 + 'px';
@@ -215,7 +219,7 @@ AlertNotify.prototype = {
         };
         var settings = this._extend({}, defaults, options);
 
-        if (this._settings.enable_fa && settings.icon.length == 0) {
+        if (this._settings.enable_fa && settings.icon.length === 0) {
             settings.icon = this._getIcon(settings.type);
         }
 

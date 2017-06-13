@@ -25,22 +25,23 @@ gulp.task('minify-js', function () {
 
 gulp.task('default', ['minify-css', 'minify-js']);
 
-var copyright = `/* Alert Notifications Library 1.0.0 
+var copyright = `/* Alert Notifications Library 1.0.0
 
-Copyright 2016, Pavel Filimonov
-filimonps@gmail.com
+ Copyright 2017, Pavel Filimonov
+ filimonps@gmail.com
+ Licensed under GPL-3.0
 
-Dependencies:
-jQuery
-http://jquery.com/
-    Copyright 2011, John Resig
-Dual licensed under the MIT or GPL Version 2 licenses.
-    http://jquery.org/license
+ Dependencies:
+ jQuery
+ http://jquery.com/
+ Copyright 2011, John Resig
+ Dual licensed under the MIT or GPL Version 2 licenses.
+ http://jquery.org/license
 
-Font Awesome(optional)
-http://fontawesome.io/
-    Created by Dave Gandy
-Font Awesome licensed under SIL OFL 1.1
-Code licensed under MIT License
-Documentation licensed under CC BY 3.0
+ Font Awesome(optional)
+ http://fontawesome.io/
+ Created by Dave Gandy
+ Font Awesome licensed under SIL OFL 1.1
+ Code licensed under MIT License
+ Documentation licensed under CC BY 3.0
 */`;
