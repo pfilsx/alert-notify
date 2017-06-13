@@ -2,7 +2,7 @@
  Alert Notifications Library 1.0.0
 
  Copyright 2016, Pavel Filimonov
- honorhelp@gmail.com
+ filimonps@gmail.com
 
  Dependencies:
  jQuery
@@ -28,7 +28,7 @@ var AlertNotify = function (options) {
     this._settings = this._extend({}, this._defaults, options);
     this._globalBlock = $('<div/>').addClass(this._globalClasses().join(' '));
 
-    let self = this;
+    var self = this;
     $(document).ready(function () {
         self._initialize()
     });
@@ -114,15 +114,6 @@ AlertNotify.prototype = {
             '</div>' +
             '</div>'
     },
-    _normalizeNotifyText: function (notify) {
-        if (!this._settings || !notify) {
-            return '';
-        }
-        var notifyHeight = notify.height();
-        var textHeight = notify.find('.' + this._settings.classPrefix + '-text').height();
-        var margin = (notifyHeight - textHeight) / 2;
-        //notify.find('.' + this._settings.classPrefix + '-text').css('margin-top', margin + 'px');
-    },
     _getIcon: function (type) {
         switch (type) {
             case 'success':
@@ -173,31 +164,30 @@ AlertNotify.prototype = {
                 }
             }
         }
-        this._normalizeNotifyText(notify);
     },
     hideNotify: function (notify, timeOut) {
         var self = this;
         if (notify) {
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             if (width < 768){
-                notify.slideUp(timeOut, () => {
+                notify.slideUp(timeOut, function() {
                     self.removeNotify(notify);
                 });
             } else {
                 switch (this._settings.animateOut) {
                     case 'basic':
-                        notify.hide(timeOut, () => {
+                        notify.hide(timeOut, function() {
                             self.removeNotify(notify);
                         });
                         break;
                     case 'slide':
-                        notify.slideUp(timeOut, () => {
+                        notify.slideUp(timeOut, function() {
                             self.removeNotify(notify);
                         });
                         break;
                     case 'fade':
                     default:
-                        notify.fadeOut(timeOut, () => {
+                        notify.fadeOut(timeOut, function() {
                             self.removeNotify(notify);
                         });
                 }

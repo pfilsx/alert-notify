@@ -1,0 +1,26 @@
+{
+  "name": "alert-notify",
+  "version": "1.0.0",
+  "description": "Alert notifications",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:pfilsx/alert-notify.git"
+  },
+  "author": "Rootly",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pfilsx/alert-notify/issues"
+  },
+  "homepage": "https://github.com/pfilsx/alert-notify#README",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-closure-compiler-service": "^0.6.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-yuicompressor": "0.0.3"
+  }
+}
