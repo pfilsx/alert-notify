@@ -1,6 +1,6 @@
 Alert Notifications
 ===================
->Simple JQuery plugin for notifications
+>Simple fully customisable JQuery plugin for notifications
 
 Requirements
 ------------
@@ -47,7 +47,7 @@ var notify = new AlertNotify({
     classPrefix: 'alert-notify'
 });
 notify.showNotification({
-    text: 'test'
+    html: '<h4>My advanced title</h4><p>My notify text</p>'
 });
 ```
 
@@ -64,6 +64,8 @@ var notify = new AlertNotify({
 ```
 Possible values: **true/false**
 
+Default value: **true**
+
 **vertical_align**
 
 Vertical positioning of notifications block
@@ -76,6 +78,8 @@ Possible values:
 
 * 'top'
 * 'bottom'
+
+Default value: 'top'
 
 **horizontal_align**
 
@@ -90,6 +94,8 @@ Possible values:
 * 'right'
 * 'left'
 * 'center'
+
+Default value: 'right'
 
 **animateIn/animateOut**
 
@@ -106,6 +112,8 @@ Possible values:
 * 'slide'
 * 'fade'
 
+Default value: 'fade'/'fade'
+
 **timeIn/timeOut**
 
 Appear/Disappear animation timeout
@@ -117,6 +125,8 @@ var notify = new AlertNotify({
 ```
 Possible values: **any integer**
 
+Default value: 500/1500
+
 **duration**
 
 Duration of notification
@@ -126,3 +136,62 @@ var notify = new AlertNotify({
 });
 ```
 Possible values: **any integer**
+
+Default value: 3500
+
+**classPrefix**
+
+Class prefix for all elements of alert-notify
+```js
+var notify = new AlertNotify({
+    classPrefix: 'my-awesome-class'
+});
+```
+Notify Options:
+---------------
+
+**type**
+
+Type of notification
+```js
+notify.showNotification({
+    type: 'warning'
+});
+```
+Possible values:
+
+* 'default'
+* 'success'
+* 'warning'
+* 'error'
+
+Default value: 'default' :)
+
+**title**
+
+Title of notification
+```js
+notify.showNotification({
+    title: 'test'
+});
+```
+Possible values: **any text**
+
+**text (required if 'html' option not set)**
+
+Text of notification
+```js
+notify.showNotification({
+    text: 'test'
+});
+```
+Possible values: **any text**
+
+**html (required if 'text' option not set)**
+Html content of notification
+```js
+notify.showNotification({
+    html: '<p>my awesome html code</p>'
+});
+```
+Possible values: **any valid html code**
