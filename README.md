@@ -64,7 +64,7 @@ var notify = new AlertNotify({
 ```
 Possible values: **true/false**
 
-Default value: **true**
+Default value: **false**
 
 **vertical_align**
 

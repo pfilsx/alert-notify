@@ -39,7 +39,7 @@ AlertNotify.prototype = {
     _defaults: {
         vertical_align: 'top',
         horizontal_align: 'right',
-        enable_fa: true,
+        enable_fa: false,
         animateIn: 'fade',
         animateOut: 'fade',
         timeIn: 500,

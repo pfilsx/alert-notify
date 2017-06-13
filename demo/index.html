@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="css/alertNotify.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <style>
+        button {
+            border: 1px solid gray;
+            background: transparent;
+            width: 250px;
+            height: 50px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<div style="text-align: center;">
+    <div>
+        <button id="test1">TOP LEFT</button>
+        <button id="test2">TOP RIGHT</button>
+    </div>
+    <div>
+        <button id="test4">BOTTOM LEFT</button>
+        <button id="test3">BOTTOM RIGHT</button>
+    </div>
+    <div><button id="test5">CENTER</button></div>
+    <br>
+    <div>
+        <button id="test6">SUCCESS</button>
+        <button id="test7">WARNING</button>
+        <button id="test8">ERROR</button>
+    </div>
+    <br>
+    <div>
+        <button id="test9">CUSTOM WIDTH</button>
+        <button id="test10">WITH TITLE</button>
+        <button id="test11">WITH ICON</button>
+    </div>
+    <br>
+    <div>
+        <button id="test12">WITH CUSTOM HTML</button>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/alertNotify.min.js"></script>
+
+<script>
+
+    var text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper sagittis turpis, ' +
+        'vitae fringilla tellus pretium sodales. Aenean accumsan dictum mollis. Nam sit amet neque non ' +
+        'ipsum posuere cursus id sit amet leo. Sed sollicitudin fermentum nibh, quis commodo neque sagittis at.' +
+        ' Donec nec leo et ex scelerisque interdum eget ut ex. In blandit metus ac augue hendrerit egestas. ' +
+        'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin aliquam ' +
+        'maximus sem ultrices volutpat. In nisl justo, vulputate accumsan mauris rhoncus, vehicula molestie ex. ' +
+        'Integer lobortis elit et urna convallis rhoncus quis vitae nunc.';
+    var notify1 = new AlertNotify({
+        horizontal_align: 'left'
+    });
+    var notify2 = new AlertNotify();
+
+    var notify3 = new AlertNotify({
+        vertical_align: 'bottom'
+    });
+    var notify4 = new AlertNotify({
+        vertical_align: 'bottom',
+        horizontal_align: 'left'
+    });
+    var notify5 = new AlertNotify({
+        horizontal_align: 'center',
+        vertical_align: 'bottom'
+    });
+
+    var notify9 = new AlertNotify({
+        width: '120px'
+    });
+
+    var notify11 = new AlertNotify({
+        enable_fa: true
+    });
+
+
+    $('button').click(function(){
+        var id = $(this).attr('id');
+        switch (id){
+            case 'test1':
+                notify1.showNotification({
+                    text: text
+                });
+                break;
+            case 'test2':
+                notify2.showNotification({
+                    text: text
+                });
+                break;
+            case 'test3':
+                notify3.showNotification({
+                    text: text
+                });
+                break;
+            case 'test4':
+                notify4.showNotification({
+                    text: text
+                });
+                break;
+            case 'test5':
+                notify5.showNotification({
+                    text: text
+                });
+                break;
+            case 'test6':
+                notify2.showNotification({
+                    text: text,
+                    type: 'success'
+                });
+                break;
+            case 'test7':
+                notify2.showNotification({
+                    text: text,
+                    type: 'warning'
+                });
+                break;
+            case 'test8':
+                notify2.showNotification({
+                    text: text,
+                    type: 'error'
+                });
+                break;
+            case 'test9':
+                notify9.showNotification({
+                    text: text
+                });
+                break;
+            case 'test10':
+                notify2.showNotification({
+                    text: text,
+                    title: 'Lorem Ipsum'
+                });
+                break;
+            case 'test11':
+                notify11.showNotification({
+                    text: text,
+                    title: 'Lorem Ipsum'
+                });
+                break;
+            case 'test12':
+                notify11.showNotification({
+                    html: '<p>Lorem <b>Ipsum</b> Html</p><hr><ul style="text-align: left;"><li>Lorem</li><li>Ipsum</li></ul>'
+                })
+        }
+    });
+
+//    $('#test').click(function () {
+//        notify.showNotification({
+//            title: 'My Awesome Title',
+//            text: text,
+//            type: 'warning'
+//        });
+//        //notify.showNotify(not, 1000);
+//    })
+</script>
+</body>
+</html>
